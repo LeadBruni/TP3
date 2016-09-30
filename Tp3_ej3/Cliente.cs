@@ -11,13 +11,17 @@ namespace Tp3_ej3
         private string iNombre;
         private string iApellido;
         private DateTime iFechaNacimiento;
+        private Empleo iEmpleo;
+
+   
 
 
         public Cliente(string pNombre, string pApellido, DateTime pFechaNacimiento, Empleo pEmpleo)
         {
             iNombre = pNombre;
             pApellido = iApellido;
-            pFechaNacimiento = iFechaNacimiento;    
+            pFechaNacimiento = iFechaNacimiento;
+            iEmpleo = pEmpleo;   
         }
 
 
@@ -30,6 +34,9 @@ namespace Tp3_ej3
 
         public DateTime FechaNacimiento()
         { return iFechaNacimiento; }
+
+        public Empleo Empleo()
+        { return iEmpleo; }
 
     }
 }
