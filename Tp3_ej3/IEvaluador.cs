@@ -8,9 +8,7 @@ namespace Tp3_ej3
 {
     public interface IEvaluador
     {
-        public bool EsValida(SolicitudEmpleado pSolicitud)
-        {
-
-        }
+               public abstract bool  EsValida(SolicitudPrestamo pSolicitud); 
+        
     }
 }
