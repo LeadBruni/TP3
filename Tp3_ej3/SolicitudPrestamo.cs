@@ -18,7 +18,7 @@ namespace TP3
         public int CantidadCuotas { get { return this.iCantidadCuotas; } }
 
 
-        public SolicitudPrestamos(Cliente pCliente, double pMonto,int pCantidadCuotas)
+        public SolicitudPrestamo(Cliente pCliente, double pMonto,int pCantidadCuotas)
             {
             this.iCliente = pCliente;
             this.iMonto = pMonto;
