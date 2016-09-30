@@ -13,5 +13,23 @@ namespace Tp3_ej3
         private DateTime iFechaNacimiento;
 
 
+        public Cliente(string pNombre, string pApellido, DateTime pFechaNacimiento, Empleo pEmpleo)
+        {
+            iNombre = pNombre;
+            pApellido = iApellido;
+            pFechaNacimiento = iFechaNacimiento;    
+        }
+
+
+        public string Nombre()
+        { return iNombre;
+        }
+
+        public string Apellido()
+        { return iApellido; }
+
+        public DateTime FechaNacimiento()
+        { return iFechaNacimiento; }
+
     }
 }
