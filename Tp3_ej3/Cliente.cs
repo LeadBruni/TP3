@@ -17,13 +17,13 @@ namespace Tp3_ej3
 
 
 
-        public Cliente(string pNombre, string pApellido, DateTime pFechaNacimiento, Empleo pEmpleo, TipoCliente pTipoCliente)
+        public Cliente(string pNombre, string pApellido, DateTime pFechaNacimiento, Empleo pEmpleo)
         {
             iNombre = pNombre;
             pApellido = iApellido;
             pFechaNacimiento = iFechaNacimiento;
             iEmpleo = pEmpleo;
-            pTipoCliente = iTipoCliente;
+            
         }
 
 
