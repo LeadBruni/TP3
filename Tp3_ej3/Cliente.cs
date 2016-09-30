@@ -12,6 +12,7 @@ namespace Tp3_ej3
         private string iApellido;
         private DateTime iFechaNacimiento;
         private Empleo iEmpleo;
+        private TipoCliente iTipoCliente;
 
    
 
@@ -37,6 +38,8 @@ namespace Tp3_ej3
 
         public Empleo Empleo()
         { return iEmpleo; }
-
+         
+        public TipoCliente TipoCliente()
+        { return iTipoCliente; }
     }
 }
