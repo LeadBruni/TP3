@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Cliente.cs" />
     <Compile Include="Empleo.cs" />
+    <Compile Include="EvaluadorAntiguedadLaboral.cs" />
     <Compile Include="IEvaluador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
