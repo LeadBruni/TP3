@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP3
+namespace Tp3_ej3
 {
     class SolicitudPrestamo
     {
