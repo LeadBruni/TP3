@@ -14,7 +14,7 @@ namespace Tp3_ej3
         private Empleo iEmpleo;
         private TipoCliente iTipoCliente;
 
-   
+
 
 
         public Cliente(string pNombre, string pApellido, DateTime pFechaNacimiento, Empleo pEmpleo)
@@ -22,12 +22,14 @@ namespace Tp3_ej3
             iNombre = pNombre;
             pApellido = iApellido;
             pFechaNacimiento = iFechaNacimiento;
-            iEmpleo = pEmpleo;   
+            iEmpleo = pEmpleo;
+            
         }
 
 
         public string Nombre()
-        { return iNombre;
+        {
+            return iNombre;
         }
 
         public string Apellido()
@@ -38,8 +40,13 @@ namespace Tp3_ej3
 
         public Empleo Empleo()
         { return iEmpleo; }
-         
-        public TipoCliente TipoCliente()
-        { return iTipoCliente; }
+
+        public TipoCliente TipoCliente
+        {
+            get { return this.iTipoCliente; }
+            set { this.iTipoCliente = value; }
+
+        }
+
     }
 }
