@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tp3_ej3
 {
-    class Empleo
+    public class Empleo
     {
         private double iSueldo;
         private DateTime iFechaIngreso;

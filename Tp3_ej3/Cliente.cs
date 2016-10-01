@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tp3_ej3
 {
-    class Cliente
+    public class Cliente
     {
         private string iNombre;
         private string iApellido;

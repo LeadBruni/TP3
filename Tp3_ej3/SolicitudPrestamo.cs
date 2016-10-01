@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tp3_ej3
 {
-    class SolicitudPrestamo
+    public class SolicitudPrestamo
     {
         //Constructores
         private double iMonto;
