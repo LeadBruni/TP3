@@ -18,12 +18,17 @@ namespace Tp3_ej3
         }
 
 
-        public double Sueldo()
-        { return iSueldo; }
+        public double Sueldo
+        {
+            get { return this.iSueldo; }
+            set { this.iSueldo = value; }
+        }
 
-
-        public DateTime FechaIngreso()
-        { return iFechaIngreso; }
+        public DateTime FechaIngreso
+        { 
+            get { return this.iFechaIngreso; }
+            
+        }
 
 
 

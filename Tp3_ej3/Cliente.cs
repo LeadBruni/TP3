@@ -27,25 +27,29 @@ namespace Tp3_ej3
         }
 
 
-        public string Nombre()
+        public string Nombre
         {
-            return iNombre;
+            get { return this.iNombre; }
         }
 
-        public string Apellido()
-        { return iApellido; }
+        public string Apellido
+        { get { return this.iApellido; } }
 
-        public DateTime FechaNacimiento()
-        { return iFechaNacimiento; }
+        public DateTime FechaNacimiento
+        { get { return this.iFechaNacimiento; } }
 
-        public Empleo Empleo()
-        { return iEmpleo; }
-
+        
         public TipoCliente TipoCliente
         {
             get { return this.iTipoCliente; }
             set { this.iTipoCliente = value; }
 
+        }
+
+        public Empleo Empleo
+        {
+            get { return this.iEmpleo; }
+            set { this.iEmpleo = value; }
         }
 
     }

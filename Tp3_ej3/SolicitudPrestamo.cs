@@ -17,7 +17,7 @@ namespace Tp3_ej3
         public double Monto { get { return this.iMonto; } }
         public int CantidadCuotas { get { return this.iCantidadCuotas; } }
 
-
+        public Cliente Cliente { get { return this.iCliente; } }
         public SolicitudPrestamo(Cliente pCliente, double pMonto,int pCantidadCuotas)
             {
             this.iCliente = pCliente;
