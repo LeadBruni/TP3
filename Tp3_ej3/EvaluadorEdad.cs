@@ -18,22 +18,30 @@ namespace Tp3_ej3
         }
         public bool EsValida(SolicitudPrestamo pSolicitud)
         {
-            bool pResultado = false;
-            DateTime fechaHoy = DateTime.Now;
-            DateTime fechaEdad = pSolicitud.Cliente.FechaNacimiento;
-            //Obtengo la diferencia en años.
-            int edad = fechaHoy.Year - fechaEdad.Year;
-            //Comparo los meses de las fechas
-            if (fechaHoy.Month - fechaEdad.Month <= 0)
-            {
-                //comparo los dias de las fechas
-                if (fechaHoy.Day - fechaEdad.Day < 0)
-                {
-                    edad--;
-                }
-            }
-            if (iEdadMinima <= edad && iEdadMaxima<=edad) { pResultado = true; }
-            return pResultado;
+            TimeSpan diferencia = DateTime.Now.Subtract(pSolicitud.Cliente.FechaNacimiento);
+
+            int años = (diferencia.Days / 365);
+
+            return años >= this.iEdadMinima &&  años <= this.iEdadMaxima;
+
+
+            //bool pResultado = false;
+            //DateTime fechaHoy = DateTime.Now;
+            //DateTime fechaEdad = pSolicitud.Cliente.FechaNacimiento;
+            ////Obtengo la diferencia en años.
+
+            //int edad = fechaHoy.Year - fechaEdad.Year;
+            ////Comparo los meses de las fechas
+            //if (fechaHoy.Month - fechaEdad.Month <= 0)
+            //{
+            //    //comparo los dias de las fechas
+            //    if (fechaHoy.Day - fechaEdad.Day < 0)
+            //    {
+            //        edad--;
+            //    }
+            //}
+            //if (iEdadMinima <= edad && iEdadMaxima<=edad) { pResultado = true; }
+            //return pResultado;
         }
     }
 }
