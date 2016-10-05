@@ -48,6 +48,8 @@
     <Compile Include="Empleo.cs" />
     <Compile Include="EvaluadorAntiguedadLaboral.cs" />
     <Compile Include="EvaluadorEdad.cs" />
+    <Compile Include="EvaluadorCantidadCuotas.cs" />
+    <Compile Include="EvaluadorSueldo.cs" />
     <Compile Include="IEvaluador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
