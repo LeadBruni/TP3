@@ -16,10 +16,10 @@ namespace Tp3_ej3
 
         public bool EsValida(SolicitudPrestamo pSolicitud)
         {
-
-            bool pResultado = false;
+            return iCantidadMaximaCuotas >= pSolicitud.CantidadCuotas;
+            /*bool pResultado = false;
             if (iCantidadMaximaCuotas >= pSolicitud.CantidadCuotas) { pResultado = true; }
-            return pResultado;
+            return pResultado;*/
 
         }
     }
