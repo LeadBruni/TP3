@@ -12,7 +12,7 @@ namespace SolicitudesPrestamos.Test
         {
             DateTime nuevaFecha = new DateTime (2010 , 10 , 05);
             EvaluadorAntiguedadLaboral evaluador = new EvaluadorAntiguedadLaboral(10);
-            int mResultadoEsperado = 5;
+            int mResultadoEsperado = 6;
             int mResultado = evaluador.calculoAntiguedad(nuevaFecha);
 
             Assert.AreEqual(mResultadoEsperado, mResultado);

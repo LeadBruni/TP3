@@ -16,11 +16,24 @@ namespace Tp3_ej3
         public bool EsValida(SolicitudPrestamo pSolicitud)
         {
             bool pResultado = false;
-            if (iAntiguedadMinima<= calculoAntiguedad(pSolicitud.Cliente.Empleo.FechaIngreso)) { pResultado = true; }
+            DateTime mFecha = pSolicitud.Cliente.Empleo.FechaIngreso;
+            DateTime fechaHoy = DateTime.Now;
+             //Obtengo la diferencia en años.
+            int años = fechaHoy.Year - mFecha.Year;
+            //Comparo los meses de las fechas
+            if (fechaHoy.Month - mFecha.Month <= 0)
+            {
+                //comparo los dias de las fechas
+                if (fechaHoy.Day - mFecha.Day < 0)
+                {
+                    años--;
+                }
+            }     
+          if (iAntiguedadMinima<= años) { pResultado = true; }
             return pResultado;
         }
 
-        public int calculoAntiguedad(DateTime pFecha)
+       /* public int calculoAntiguedad(DateTime pFecha)
         {
             DateTime fechaHoy = DateTime.Now;
             int fechaParametro = pFecha.Year;
@@ -35,6 +48,6 @@ namespace Tp3_ej3
                 }
             }
             return años;
-        }
+        }*/
     }
 }
