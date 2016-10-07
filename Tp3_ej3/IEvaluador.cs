@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tp3_ej3
 {
-     interface IEvaluador
+    public interface IEvaluador
     {
              bool  EsValida(SolicitudPrestamo pSolicitud); 
         
