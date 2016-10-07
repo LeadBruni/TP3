@@ -15,7 +15,12 @@ namespace Tp3_ej3
         }
         public bool EsValida(SolicitudPrestamo pSolicitud)
         {
-            bool pResultado = false;
+            TimeSpan diferencia = DateTime.Now.Subtract(pSolicitud.Cliente.FechaNacimiento);
+
+            int años = (diferencia.Days / 365);
+
+            return años >= this.iAntiguedadMinima;
+            /*bool pResultado = false;
             DateTime mFecha = pSolicitud.Cliente.Empleo.FechaIngreso;
             DateTime fechaHoy = DateTime.Now;
              //Obtengo la diferencia en años.
@@ -30,7 +35,7 @@ namespace Tp3_ej3
                 }
             }     
           if (iAntiguedadMinima<= años) { pResultado = true; }
-            return pResultado;
+            return pResultado;*/
         }
 
        /* public int calculoAntiguedad(DateTime pFecha)
