@@ -8,26 +8,89 @@ namespace Tp3_ej3
 {
    public class GestorPrestamo
     {
-        private Dictionary<TipoCliente, EvaluadorCompuesto> iEvaluadoresPorCliente;
+        private Dictionary<TipoCliente, IEvaluador> iEvaluadoresPorCliente;
 
         public GestorPrestamo()
 
         {
             EvaluadorAntiguedadLaboral evalAntiguedad = new EvaluadorAntiguedadLaboral(6);
-            Evaluador
-
-
-            iEvaluadoresPorCliente[TipoCliente.NoCliente] = this.CrearEvaluadorNoCliente(pEdad, pAntiguedad, pCuotas, pMonto, pSueldo);
-            iEvaluadoresPorCliente[TipoCliente.Cliente] = this.CrearEvaluadorCliente(pEdad, pAntiguedad, pCuotas, pMonto, pSueldo);
-            iEvaluadoresPorCliente[TipoCliente.ClienteGold] = this.CrearEvaluadorClienteGold(pEdad, pAntiguedad, pCuotas, pMonto, pSueldo);
-            iEvaluadoresPorCliente[TipoCliente.ClientePlatinum] = this.CrearEvaluadorClientePlatinum(pEdad, pAntiguedad, pCuotas, pMonto, pSueldo);
+            EvaluadorSueldo evalSueldo = new EvaluadorSueldo(5000);
+            EvaluadorEdad evalEdad = new EvaluadorEdad(18, 75);
+            
+            iEvaluadoresPorCliente[TipoCliente.NoCliente] = this.CrearEvaluadorNoCliente(evalAntiguedad, evalEdad, evalSueldo);
+            iEvaluadoresPorCliente[TipoCliente.Cliente] = this.CrearEvaluadorCliente(evalAntiguedad, evalEdad, evalSueldo);
+            iEvaluadoresPorCliente[TipoCliente.ClienteGold] = this.CrearEvaluadorClienteGold(evalAntiguedad, evalEdad, evalSueldo);
+            iEvaluadoresPorCliente[TipoCliente.ClientePlatinum] = this.CrearEvaluadorClientePlatinum(evalAntiguedad, evalEdad, evalSueldo);
 
         }
 
-        public IEvaluador CrearEvaluadorNoCliente(int pEdad, int pAntiguedad, int pCuotas, double pMonto, double pSueldo)
-        { EvaluadorAntiguedadLaboral evalAntiguedad = new EvaluadorAntiguedadLaboral(pAntiguedad);
-            EvaluadorMonto evalMonto = new EvaluadorMonto(pMonto);
-            Eva
+        private IEvaluador CrearEvaluadorNoCliente(EvaluadorAntiguedadLaboral pAntiguedad,EvaluadorEdad pEdad,EvaluadorSueldo pSueldo)
+        {
+            EvaluadorCompuesto evalCompuesto = new EvaluadorCompuesto();
+            EvaluadorCantidadCuotas evalCantidadCuotas = new EvaluadorCantidadCuotas(12);
+            EvaluadorMonto evalMonto = new EvaluadorMonto(20000);
+            evalCompuesto.AgregarEvaluador(evalCantidadCuotas);
+            evalCompuesto.AgregarEvaluador(pSueldo);
+            evalCompuesto.AgregarEvaluador(pEdad);
+            evalCompuesto.AgregarEvaluador(evalMonto); 
+            evalCompuesto.AgregarEvaluador(pAntiguedad);
+
+            return evalCompuesto;
+        }
+
+        private IEvaluador CrearEvaluadorCliente(EvaluadorAntiguedadLaboral pAntiguedad, EvaluadorEdad pEdad, EvaluadorSueldo pSueldo)
+        {
+            EvaluadorCompuesto evalCompuesto = new EvaluadorCompuesto();
+            EvaluadorCantidadCuotas evalCantidadCuotas = new EvaluadorCantidadCuotas(32);
+            EvaluadorMonto evalMonto = new EvaluadorMonto(100000);
+            evalCompuesto.AgregarEvaluador(evalCantidadCuotas);
+            evalCompuesto.AgregarEvaluador(pSueldo);
+            evalCompuesto.AgregarEvaluador(pEdad);
+            evalCompuesto.AgregarEvaluador(evalMonto);
+            evalCompuesto.AgregarEvaluador(pAntiguedad);
+
+            return evalCompuesto;
+
+        }
+
+        private IEvaluador CrearEvaluadorClienteGold(EvaluadorAntiguedadLaboral pAntiguedad, EvaluadorEdad pEdad, EvaluadorSueldo pSueldo)
+        {
+            EvaluadorCompuesto evalCompuesto = new EvaluadorCompuesto();
+            EvaluadorCantidadCuotas evalCantidadCuotas = new EvaluadorCantidadCuotas(60);
+            EvaluadorMonto evalMonto = new EvaluadorMonto(150000);
+            evalCompuesto.AgregarEvaluador(evalCantidadCuotas);
+            evalCompuesto.AgregarEvaluador(pSueldo);
+            evalCompuesto.AgregarEvaluador(pEdad);
+            evalCompuesto.AgregarEvaluador(evalMonto);
+            evalCompuesto.AgregarEvaluador(pAntiguedad);
+
+            return evalCompuesto;
+
+        }
+
+        private IEvaluador CrearEvaluadorClientePlatinum(EvaluadorAntiguedadLaboral pAntiguedad, EvaluadorEdad pEdad, EvaluadorSueldo pSueldo)
+        {
+            EvaluadorCompuesto evalCompuesto = new EvaluadorCompuesto();
+            EvaluadorCantidadCuotas evalCantidadCuotas = new EvaluadorCantidadCuotas(60);
+            EvaluadorMonto evalMonto = new EvaluadorMonto(200000);
+            evalCompuesto.AgregarEvaluador(evalCantidadCuotas);
+            evalCompuesto.AgregarEvaluador(pSueldo);
+            evalCompuesto.AgregarEvaluador(pEdad);
+            evalCompuesto.AgregarEvaluador(evalMonto);
+            evalCompuesto.AgregarEvaluador(pAntiguedad);
+
+            return evalCompuesto;
+
+        }
+
+        public bool EsValida(SolicitudPrestamo pSolicitud)
+        {
+           bool mValida=false;
+            if (iEvaluadoresPorCliente.ContainsKey(pSolicitud.Cliente.TipoCliente))
+            {
+                mValida = iEvaluadoresPorCliente[pSolicitud.Cliente.TipoCliente].EsValida(pSolicitud);
+            }
+            return mValida;            
         }
     }
 }
