@@ -47,6 +47,8 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="Empleo.cs" />
     <Compile Include="EvaluadorAntiguedadLaboral.cs" />
+    <Compile Include="EvaluadorCompuesto.cs" />
+    <Compile Include="EvaluadorMonto.cs" />
     <Compile Include="EvaluadorEdad.cs" />
     <Compile Include="EvaluadorCantidadCuotas.cs" />
     <Compile Include="EvaluadorSueldo.cs" />
