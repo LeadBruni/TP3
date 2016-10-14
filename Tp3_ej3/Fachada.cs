@@ -12,15 +12,11 @@ namespace Tp3_ej3
         Empleo fEmpleo;
         SolicitudPrestamo fSolicitud;
         TipoCliente fTipoCliente;
-        IEvaluador fIEvaluador;
+       
 
         //Cliente Cliente = new Cliente;
 
-        public bool EsValida(SolicitudPrestamo fSolicitud)
-        {
-            fIEvaluador.EsValida(fSolicitud);
-            return false;
-        }
+       
 
         public Empleo IngresarEmpleo(double pSueldo, DateTime pFechaIngreso)
         {
@@ -32,7 +28,7 @@ namespace Tp3_ej3
             return new Cliente(pNombre, pApellido, pFechaNac, pEmpleo);
         }
 
-        public SolicitudPrestamo IngresarSolicidudPrestamo(Cliente pCliente, double pMonto, int pCantidadCuotas)
+        public SolicitudPrestamo IngresarSolicitudPrestamo(Cliente pCliente, double pMonto, int pCantidadCuotas)
         {
             return new SolicitudPrestamo(pCliente, pMonto, pCantidadCuotas );
         }
