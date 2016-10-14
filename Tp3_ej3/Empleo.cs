@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Tp3_ej3
 {
-    public class Empleo
+     public class Empleo
     {
         private double iSueldo;
         private DateTime iFechaIngreso;
 
 
         public Empleo (double pSueldo, DateTime pFechaIngreso)
-        { iSueldo = pSueldo;
-            pFechaIngreso = iFechaIngreso;
+        {
+            iSueldo = pSueldo;
+            iFechaIngreso = pFechaIngreso;
         }
 
 
@@ -27,7 +28,7 @@ namespace Tp3_ej3
         public DateTime FechaIngreso
         { 
             get { return this.iFechaIngreso; }
-            
+            set { this.iFechaIngreso = value; }
         }
 
 

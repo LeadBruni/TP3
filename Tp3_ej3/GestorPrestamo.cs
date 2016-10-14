@@ -8,7 +8,7 @@ namespace Tp3_ej3
 {
    public class GestorPrestamo
     {
-        private Dictionary<TipoCliente, IEvaluador> iEvaluadoresPorCliente;
+        private Dictionary<TipoCliente, IEvaluador> iEvaluadoresPorCliente = new Dictionary<TipoCliente, IEvaluador>();
 
         public GestorPrestamo()
 
@@ -17,10 +17,10 @@ namespace Tp3_ej3
             EvaluadorSueldo evalSueldo = new EvaluadorSueldo(5000);
             EvaluadorEdad evalEdad = new EvaluadorEdad(18, 75);
             
-            iEvaluadoresPorCliente[TipoCliente.NoCliente] = this.CrearEvaluadorNoCliente(evalAntiguedad, evalEdad, evalSueldo);
-            iEvaluadoresPorCliente[TipoCliente.Cliente] = this.CrearEvaluadorCliente(evalAntiguedad, evalEdad, evalSueldo);
-            iEvaluadoresPorCliente[TipoCliente.ClienteGold] = this.CrearEvaluadorClienteGold(evalAntiguedad, evalEdad, evalSueldo);
-            iEvaluadoresPorCliente[TipoCliente.ClientePlatinum] = this.CrearEvaluadorClientePlatinum(evalAntiguedad, evalEdad, evalSueldo);
+            iEvaluadoresPorCliente.Add(TipoCliente.NoCliente, this.CrearEvaluadorNoCliente(evalAntiguedad, evalEdad, evalSueldo));
+            iEvaluadoresPorCliente.Add(TipoCliente.Cliente, this.CrearEvaluadorCliente(evalAntiguedad, evalEdad, evalSueldo));
+            iEvaluadoresPorCliente.Add(TipoCliente.ClienteGold, this.CrearEvaluadorClienteGold(evalAntiguedad, evalEdad, evalSueldo));
+            iEvaluadoresPorCliente.Add(TipoCliente.ClientePlatinum, this.CrearEvaluadorClientePlatinum(evalAntiguedad, evalEdad, evalSueldo));
 
         }
 

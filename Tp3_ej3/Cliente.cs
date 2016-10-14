@@ -20,8 +20,8 @@ namespace Tp3_ej3
         public Cliente(string pNombre, string pApellido, DateTime pFechaNacimiento, Empleo pEmpleo)
         {
             iNombre = pNombre;
-            pApellido = iApellido;
-            pFechaNacimiento = iFechaNacimiento;
+            iApellido = pApellido;
+            iFechaNacimiento = pFechaNacimiento;
             iEmpleo = pEmpleo;
             
         }
