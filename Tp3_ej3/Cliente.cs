@@ -17,7 +17,7 @@ namespace Tp3_ej3
 
 
 
-        public Cliente(string pNombre, string pApellido, DateTime pFechaNacimiento, Empleo pEmpleo)
+        public Cliente(string pNombre, string pApellido, DateTime pFechaNacimiento, Empleo pEmpleo,TipoCliente pTipo=TipoCliente.NoCliente)
         {
             iNombre = pNombre;
             iApellido = pApellido;
